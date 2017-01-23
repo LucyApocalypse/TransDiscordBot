@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -19,7 +20,6 @@ public class MainWindow extends Application{
     @FXML
     private TextField specSymbol;
 
-
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("CryptPHY");
@@ -29,7 +29,7 @@ public class MainWindow extends Application{
         Parent parent = FXMLLoader.load(classLoader.getResource("xmls/MainWindow.fxml"));
         stage.setScene(new Scene(parent));
         stage.setResizable(true);
-        stage.getIcons().add(new Image(classLoader.getResourceAsStream("images/icon.png")));
+
         stage.show();
     }
 }
