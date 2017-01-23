@@ -8,8 +8,8 @@
 
 <AnchorPane maxHeight="500.0" maxWidth="650.0" minHeight="500.0" minWidth="650.0" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.artemgafarov.gui.controllers.MainWindowController">
    <children>
-      <TextArea fx:id="text" layoutX="14.0" layoutY="14.0" prefHeight="383.0" prefWidth="622.0" promptText="Text to (en/de)crypt" wrapText="true" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
-      <TextArea fx:id="key" layoutX="13.0" layoutY="404.0" prefHeight="82.0" prefWidth="462.0" promptText="(En/De)cryption key WITHOUT SPACES!" wrapText="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+      <TextArea fx:id="text" layoutX="14.0" layoutY="14.0" prefHeight="383.0" prefWidth="622.0" promptText="Text to (en/de)crypt" wrapText="true" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+      <TextArea fx:id="key" layoutX="14.0" layoutY="401.0" prefHeight="82.0" prefWidth="460.0" promptText="(En/De)cryption key WITHOUT SPACES!" wrapText="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="176.0" />
       <TextField fx:id="specSymbol" layoutX="594.0" layoutY="404.0" prefHeight="26.0" prefWidth="42.0" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="14.0" />
       <Button fx:id="decryptBTN" layoutX="481.0" layoutY="460.0" mnemonicParsing="false" onAction="#decrypt" prefHeight="26.0" prefWidth="155.0" text="Decrypt" textFill="#684848" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
       <Button fx:id="encryptBTN" layoutX="481.0" layoutY="432.0" mnemonicParsing="false" onAction="#encrypt" prefHeight="26.0" prefWidth="155.0" text="Encrypt" textAlignment="CENTER" textFill="#664747" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="14.0" />
