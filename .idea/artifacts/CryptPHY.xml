@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="CryptPHY">
+    <output-path>$PROJECT_DIR$/out/artifacts/CryptPHY</output-path>
+    <root id="root">
+      <element id="archive" name="CryptPHY.jar">
+        <element id="module-output" name="CryptPHY" />
+      </element>
+    </root>
+  </artifact>
+</component>
