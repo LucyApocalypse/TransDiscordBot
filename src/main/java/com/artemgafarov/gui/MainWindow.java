@@ -28,7 +28,7 @@ public class MainWindow extends Application{
 
         Parent parent = FXMLLoader.load(classLoader.getResource("xmls/MainWindow.fxml"));
         stage.setScene(new Scene(parent));
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.getIcons().add(new Image(classLoader.getResourceAsStream("images/icon.png")));
         stage.show();
     }
