@@ -5,6 +5,7 @@ import com.artemgafarov.cryptography.Encryption;
 import com.artemgafarov.cryptography.Exceptions.InitException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -19,6 +20,10 @@ public class MainWindowController {
     private TextArea key;
     @FXML
     private TextField specSymbol;
+    @FXML
+    private RadioButton encryptRB;
+    @FXML
+    private RadioButton decryptRB;
 
     private boolean isChecked(){
 
@@ -28,7 +33,7 @@ public class MainWindowController {
         return true;
     }
 
-    public void decrypt(ActionEvent actionEvent) {
+    public void decrypt() {
         if(!isChecked()){
             JOptionPane.showMessageDialog(null, "Some fields are empty\n" +
                     "Fill in all the fields", "Error", 2);
@@ -63,7 +68,7 @@ public class MainWindowController {
         }
     }
 
-    public void encrypt(ActionEvent actionEvent) {
+    public void encrypt() {
         if(!isChecked()){
             JOptionPane.showMessageDialog(null, "Some fields are empty\n" +
                     "Fill in all the fields", "Error", 2);
@@ -98,6 +103,16 @@ public class MainWindowController {
             text.setText(Encryption.encrypt());
         } catch (InitException e) {
             JOptionPane.showMessageDialog(null, "Some Error checked.\nTry to repeat operation", "Error", 2);
+        }
+    }
+
+    public void makeOperation(ActionEvent actionEvent) {
+        if (encryptRB.isSelected()){
+            encrypt();
+        } else if (decryptRB.isSelected()){
+            decrypt();
+        } else {
+            JOptionPane.showMessageDialog(null, "Try to choose operation", "Error", 2);
         }
     }
 }

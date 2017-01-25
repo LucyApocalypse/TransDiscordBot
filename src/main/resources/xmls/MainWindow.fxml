@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="650.0" prefHeight="-Infinity" prefWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.artemgafarov.gui.controllers.MainWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="650.0" prefHeight="532.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.artemgafarov.gui.controllers.MainWindowController">
    <children>
-      <TextArea fx:id="text" layoutX="14.0" layoutY="116.0" prefHeight="281.0" prefWidth="622.0" promptText="Text to (en/de)crypt" wrapText="true" AnchorPane.bottomAnchor="104.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
-      <TextArea fx:id="key" layoutX="14.0" layoutY="401.0" prefHeight="82.0" prefWidth="460.0" promptText="(En/De)cryption key WITHOUT SPACES!" wrapText="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="176.0" />
-      <TextField fx:id="specSymbol" layoutX="594.0" layoutY="404.0" prefHeight="26.0" prefWidth="42.0" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="14.0" />
-      <Button fx:id="decryptBTN" layoutX="481.0" layoutY="460.0" mnemonicParsing="false" onAction="#decrypt" prefHeight="26.0" prefWidth="155.0" text="Decrypt" textFill="#684848" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
-      <Button fx:id="encryptBTN" layoutX="481.0" layoutY="432.0" mnemonicParsing="false" onAction="#encrypt" prefHeight="26.0" prefWidth="155.0" text="Encrypt" textAlignment="CENTER" textFill="#664747" textOverrun="WORD_ELLIPSIS" AnchorPane.bottomAnchor="42.0" AnchorPane.rightAnchor="14.0" />
-      <Text fill="#664747" layoutX="483.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Special Symbol : " wrappingWidth="113.7294921875" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="53.2705078125" />
+      <TextArea fx:id="text" layoutX="15.0" layoutY="53.0" prefHeight="323.0" prefWidth="622.0" promptText="Text to (en/de)crypt" wrapText="true" AnchorPane.bottomAnchor="124.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="53.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextArea>
+      <TextArea fx:id="key" layoutX="14.0" layoutY="379.0" prefHeight="109.0" prefWidth="460.0" promptText="(En/De)cryption key WITHOUT SPACES!" wrapText="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="176.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextArea>
+      <TextField fx:id="specSymbol" layoutX="594.0" layoutY="378.0" prefHeight="26.0" prefWidth="42.0" AnchorPane.bottomAnchor="96.0" AnchorPane.rightAnchor="14.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor></TextField>
+      <Button fx:id="cryptBTN" layoutX="481.0" layoutY="460.0" mnemonicParsing="false" onAction="#makeOperation" prefHeight="26.0" prefWidth="155.0" text="Make" textFill="#684848" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+      <Text fill="#664747" layoutX="481.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Special Symbol : " wrappingWidth="113.7294921875" AnchorPane.bottomAnchor="104.0" AnchorPane.rightAnchor="55.2705078125" />
+      <Text fill="#d32929" fontSmoothingType="LCD" layoutX="202.0" layoutY="44.0" strokeLineCap="BUTT" strokeType="OUTSIDE" strokeWidth="0.0" text="CrypthPHY" textAlignment="CENTER" wrappingWidth="246.7294921875" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="202.0" AnchorPane.topAnchor="0.009998321533203125">
+         <font>
+            <Font name="Ubuntu Mono Bold" size="53.0" />
+         </font>
+      </Text>
+      <Group layoutX="481.0" layoutY="436.0">
+         <children>
+            <RadioButton fx:id="decryptRB" mnemonicParsing="false" text="Encrypt" />
+            <RadioButton fx:id="encryptRB" mnemonicParsing="false" prefHeight="62.0" prefWidth="155.0" text="Decrypt" />
+         </children>
+      </Group>
    </children>
 </AnchorPane>
