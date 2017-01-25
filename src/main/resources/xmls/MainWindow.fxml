@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="650.0" prefHeight="532.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.artemgafarov.gui.controllers.MainWindowController">
    <children>
-      <TextArea fx:id="text" layoutX="15.0" layoutY="53.0" prefHeight="323.0" prefWidth="622.0" promptText="Text to (en/de)crypt" wrapText="true" AnchorPane.bottomAnchor="124.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="53.0">
+      <TextArea fx:id="text" layoutX="15.0" layoutY="64.0" prefHeight="344.0" prefWidth="622.0" promptText="Text to (en/de)crypt" wrapText="true" AnchorPane.bottomAnchor="124.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="64.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextArea>
@@ -26,9 +26,9 @@
          </cursor></TextField>
       <Button fx:id="cryptBTN" layoutX="481.0" layoutY="460.0" mnemonicParsing="false" onAction="#makeOperation" prefHeight="26.0" prefWidth="155.0" text="Make" textFill="#684848" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
       <Text fill="#664747" layoutX="481.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Special Symbol : " wrappingWidth="113.7294921875" AnchorPane.bottomAnchor="104.0" AnchorPane.rightAnchor="55.2705078125" />
-      <Text fill="#d32929" fontSmoothingType="LCD" layoutX="202.0" layoutY="44.0" strokeLineCap="BUTT" strokeType="OUTSIDE" strokeWidth="0.0" text="CrypthPHY" textAlignment="CENTER" wrappingWidth="246.7294921875" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="202.0" AnchorPane.topAnchor="0.009998321533203125">
+      <Text fill="#363535" fontSmoothingType="LCD" layoutX="15.0" layoutY="45.0" strokeLineCap="BUTT" strokeType="OUTSIDE" strokeWidth="0.0" text="CrypthPHY" textAlignment="CENTER" wrappingWidth="358.7294921875" AnchorPane.bottomAnchor="407.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="277.0" AnchorPane.topAnchor="0.0">
          <font>
-            <Font name="Ubuntu Mono Bold" size="53.0" />
+            <Font name="DejaVu Serif Bold Italic" size="53.0" />
          </font>
       </Text>
       <Group layoutX="481.0" layoutY="444.0" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="14.0">
