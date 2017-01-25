@@ -31,10 +31,10 @@
             <Font name="Ubuntu Mono Bold" size="53.0" />
          </font>
       </Text>
-      <Group layoutX="481.0" layoutY="436.0">
+      <Group layoutX="481.0" layoutY="444.0" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="14.0">
          <children>
-            <RadioButton fx:id="decryptRB" mnemonicParsing="false" text="Encrypt" />
-            <RadioButton fx:id="encryptRB" mnemonicParsing="false" prefHeight="62.0" prefWidth="155.0" text="Decrypt" />
+            <RadioButton fx:id="encryptRB" mnemonicParsing="false" prefHeight="9.0" prefWidth="155.0" text="Decrypt" />
+            <RadioButton fx:id="decryptRB" layoutY="20.0" mnemonicParsing="false" prefHeight="5.0" prefWidth="156.0" text="Encrypt" />
          </children>
       </Group>
    </children>
