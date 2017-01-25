@@ -115,4 +115,14 @@ public class MainWindowController {
             JOptionPane.showMessageDialog(null, "Try to choose operation", "Error", 2);
         }
     }
+
+    public void decryptionSelected(ActionEvent actionEvent) {
+        decryptRB.setSelected(true);
+        encryptRB.setSelected(false);
+    }
+
+    public void encryptionSelected(ActionEvent actionEvent) {
+        decryptRB.setSelected(false);
+        encryptRB.setSelected(true);
+    }
 }
