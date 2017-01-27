@@ -23,12 +23,14 @@ public class MainWindow extends Application{
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("CryptPHY");
-
         ClassLoader classLoader = Main.class.getClassLoader();
 
         Parent parent = FXMLLoader.load(classLoader.getResource("xmls/MainWindow.fxml"));
         stage.setScene(new Scene(parent));
         stage.setResizable(true);
+
+        stage.setMinHeight(500);
+        stage.setMinWidth(600);
 
         stage.show();
     }
