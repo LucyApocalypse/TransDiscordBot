@@ -1,7 +1,7 @@
 package com.artemgafarov.gui.controllers;
 
-import com.artemgafarov.cryptography.Decryption;
 import com.artemgafarov.cryptography.Encryption;
+import com.artemgafarov.cryptography.Decryption;
 import com.artemgafarov.cryptography.Exceptions.InitException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -57,10 +57,10 @@ public class MainWindowController {
 
         key.setText(key.getText().toLowerCase());
 
-        Decryption.setEncryptedText(text.getText());
-        Decryption.setSpecCharacter(specSymbol.getText().charAt(0));
-        Decryption.setKey(key.getText());
-        Decryption._init();
+        Encryption.setEncryptedText(text.getText());
+        Encryption.setSpecCharacter(specSymbol.getText().charAt(0));
+        Encryption.setKey(key.getText());
+        Encryption._init();
         try {
             text.setText(Decryption.decrypt());
         } catch (InitException e) {
@@ -94,11 +94,11 @@ public class MainWindowController {
 
 
 
-        Encryption.setText(text.getText());
-        Encryption.setSpecCharacter(specSymbol.getText().charAt(0));
+        Decryption.setText(text.getText());
+        Decryption.setSpecCharacter(specSymbol.getText().charAt(0));
 
-        Encryption.setKey(key.getText());
-        Encryption._init();
+        Decryption.setKey(key.getText());
+        Decryption._init();
         try {
             text.setText(Encryption.encrypt());
         } catch (InitException e) {
@@ -116,13 +116,13 @@ public class MainWindowController {
         }
     }
 
-    public void decryptionSelected(ActionEvent actionEvent) {
+    public void encryptionSelected(ActionEvent actionEvent) {
         decryptRB.setSelected(true);
         encryptRB.setSelected(false);
     }
 
-    public void encryptionSelected(ActionEvent actionEvent) {
-        decryptRB.setSelected(false);
+    public void decryptionSelected(ActionEvent actionEvent) {
         encryptRB.setSelected(true);
+        decryptRB.setSelected(false);
     }
 }

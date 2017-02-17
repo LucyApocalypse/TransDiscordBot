@@ -7,8 +7,8 @@ import com.artemgafarov.cryptography.Resources.SecretKey;
  * Created by fada on 22.01.17.
  */
 public class Encryption {
+    private static String encryptedText;
     private static String key;
-    private static String text;
     private static Character[][] characters;
     private static Character[] symbols;
     private static Character specCharacter;
@@ -17,25 +17,17 @@ public class Encryption {
         Encryption.specCharacter = specCharacter;
     }
 
-    public static String getKey() {
-        return key;
+    public static void setEncryptedText(String encryptedText) {
+        Encryption.encryptedText = new StringBuilder(encryptedText).reverse().toString();
     }
 
     public static void setKey(String key) {
         Encryption.key = key;
     }
 
-    public static String getText() {
-        return text;
-    }
-
-    public static void setText(String text) {
-        Encryption.text = text;
-    }
-
     public static void _init(){
         SecretKey.setKey(key);
-        SecretKey.setTextLength(text.length());
+        SecretKey.setTextLength(encryptedText.length());
         SecretKey._init();
         SecretKey.generateColumns();
         characters = SecretKey.getTextMatrix();
@@ -48,23 +40,13 @@ public class Encryption {
             throw new InitException("Initialization Error. Try to use _init()");
         }
 
-        String encryptedData = "";
+        String decryptedData = "";
 
         int f = 0;
-        for (int i = 0; i < characters.length; i++){
-            for (int j = 0; j < characters[i].length; j++){
-                if(f < text.length()) {
-                    characters[i][j] = text.charAt(f);
-                    f++;
-                }else {
-                    characters[i][j] = specCharacter;
-                }
-            }
-        }
+        int b = 0;
 
         int secretNumber = 0;
         int len = key.length();
-
 
         for (int i = 0; i < len; i++){
             for (int j = 0; j < i; j++){
@@ -78,18 +60,34 @@ public class Encryption {
         for (int i = 0; i < symbols.length; i++){
             f = 0;
             for (int j = 0; j < key.length(); j++){
-                if(symbols[i] == key.toLowerCase().charAt(j)){
+                if (symbols[i] == key.toLowerCase().charAt(j)){
                     for (int a = 0; a < characters.length; a++){
-                        encryptedData += (char)((int)characters[a][f] + secretNumber + f + (int)key.charAt(0) + (int)specCharacter);
+                        if(b >= encryptedText.length())
+                            break;
+                        characters[a][f] = (char)((int)encryptedText.charAt(b) - secretNumber - f - (int)key.charAt(0) - (int)specCharacter);
+                        b++;
                     }
                 }
                 f++;
             }
         }
 
+        for (int i = 0; i < characters.length; i++){
+            for (int j = 0; j < characters[i].length; j++){
 
+                if (characters[i][j] == null)
+                    continue;
 
+                decryptedData += characters[i][j];
+                if (decryptedData.charAt(decryptedData.length() - 1) == specCharacter){
+                    decryptedData = decryptedData.substring(0, decryptedData.length()-1);
+                    break;
+                }
+            }
+        }
 
-        return new StringBuilder(encryptedData).reverse().toString();
+        decryptedData.trim();
+
+        return decryptedData;
     }
 }

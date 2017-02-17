@@ -1,12 +1,12 @@
 <component name="ArtifactManager">
   <artifact type="javafx" name="CryptPHY">
-    <output-path>C:/Artifacts</output-path>
+    <output-path>D:/projects/resoults/CryptPHY</output-path>
     <properties id="javafx-properties">
       <options>
         <option name="appClass" value="com.artemgafarov.Main" />
         <option name="description" value="" />
         <option name="htmlPlaceholderId" value="" />
-        <option name="nativeBundle" value="exe" />
+        <option name="nativeBundle" value="all" />
         <option name="title" value="CryptPHY" />
         <option name="vendor" value="" />
         <option name="version" value="" />
