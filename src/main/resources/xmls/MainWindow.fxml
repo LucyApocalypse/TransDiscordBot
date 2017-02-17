@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
@@ -10,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="650.0" prefHeight="532.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.artemgafarov.gui.controllers.MainWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="650.0" prefHeight="532.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.artemgafarov.gui.controllers.MainWindowController">
    <children>
       <TextArea fx:id="text" layoutX="15.0" layoutY="64.0" prefHeight="344.0" prefWidth="622.0" promptText="Text to (en/de)crypt" wrapText="true" AnchorPane.bottomAnchor="124.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="64.0">
          <cursor>
@@ -20,21 +25,21 @@
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextArea>
-      <TextField fx:id="specSymbol" layoutX="594.0" layoutY="378.0" prefHeight="26.0" prefWidth="42.0" AnchorPane.bottomAnchor="96.0" AnchorPane.rightAnchor="14.0">
+      <TextField fx:id="specSymbol" layoutX="593.0" layoutY="411.0" prefHeight="26.0" prefWidth="42.0" AnchorPane.bottomAnchor="95.0" AnchorPane.rightAnchor="15.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor></TextField>
-      <Button fx:id="cryptBTN" layoutX="481.0" layoutY="460.0" mnemonicParsing="false" onAction="#makeOperation" prefHeight="26.0" prefWidth="155.0" text="Make" textFill="#684848" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
-      <Text fill="#664747" layoutX="481.0" layoutY="393.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Special Symbol : " wrappingWidth="113.7294921875" AnchorPane.bottomAnchor="104.0" AnchorPane.rightAnchor="55.2705078125" />
-      <Text fill="#363535" fontSmoothingType="LCD" layoutX="15.0" layoutY="45.0" strokeLineCap="BUTT" strokeType="OUTSIDE" strokeWidth="0.0" text="CrypthPHY" textAlignment="CENTER" wrappingWidth="358.7294921875" AnchorPane.bottomAnchor="407.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="277.0" AnchorPane.topAnchor="0.0">
+      <Button fx:id="cryptBTN" layoutX="481.0" layoutY="492.0" mnemonicParsing="false" onAction="#makeOperation" prefHeight="26.0" prefWidth="155.0" text="Make" textFill="#684848" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+      <Text fill="#664747" layoutX="480.0" layoutY="428.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Special Symbol : " wrappingWidth="113.7294921875" AnchorPane.bottomAnchor="100.0" AnchorPane.rightAnchor="56.2705078125" />
+      <Text fill="#363535" layoutX="146.0" layoutY="52.0" strokeLineCap="BUTT" strokeType="OUTSIDE" strokeWidth="0.0" text="CrypthPHY" textAlignment="CENTER" wrappingWidth="358.7294921875" AnchorPane.bottomAnchor="468.7060546875" AnchorPane.leftAnchor="146.0" AnchorPane.rightAnchor="145.2705078125" AnchorPane.topAnchor="3.4404296875">
          <font>
-            <Font name="DejaVu Serif Bold Italic" size="53.0" />
+            <Font name="System Bold" size="45.0" />
          </font>
       </Text>
       <Group layoutX="481.0" layoutY="444.0" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="14.0">
          <children>
-            <RadioButton fx:id="encryptRB" onAction="#encryptionSelected" prefHeight="8" prefWidth="155.0" text="Decrypt" />
-            <RadioButton fx:id="decryptRB" layoutY="23.0" onAction="#decryptionSelected" prefHeight="8" prefWidth="156.0" text="Encrypt" />
+            <RadioButton fx:id="encryptRB" layoutX="1.0" onAction="#encryptionSelected" prefHeight="8" prefWidth="155.0" text="Decryption" />
+            <RadioButton fx:id="decryptRB" layoutY="23.0" onAction="#decryptionSelected" prefHeight="8" prefWidth="156.0" selected="true" text="Encryption" />
          </children>
       </Group>
    </children>
