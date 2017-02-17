@@ -7,7 +7,7 @@ import com.artemgafarov.cryptography.Resources.SecretKey;
  * Created by fada on 22.01.17.
  */
 public class Encryption {
-    private static String encryptedText;
+    private static String text;
     private static String key;
     private static Character[][] characters;
     private static Character[] symbols;
@@ -17,8 +17,8 @@ public class Encryption {
         Encryption.specCharacter = specCharacter;
     }
 
-    public static void setEncryptedText(String encryptedText) {
-        Encryption.encryptedText = new StringBuilder(encryptedText).reverse().toString();
+    public static void setText(String text) {
+        Encryption.text = new StringBuilder(text).reverse().toString();
     }
 
     public static void setKey(String key) {
@@ -27,7 +27,7 @@ public class Encryption {
 
     public static void _init(){
         SecretKey.setKey(key);
-        SecretKey.setTextLength(encryptedText.length());
+        SecretKey.setTextLength(text.length());
         SecretKey._init();
         SecretKey.generateColumns();
         characters = SecretKey.getTextMatrix();
@@ -62,9 +62,9 @@ public class Encryption {
             for (int j = 0; j < key.length(); j++){
                 if (symbols[i] == key.toLowerCase().charAt(j)){
                     for (int a = 0; a < characters.length; a++){
-                        if(b >= encryptedText.length())
+                        if(b >= text.length())
                             break;
-                        characters[a][f] = (char)((int)encryptedText.charAt(b) - secretNumber - f - (int)key.charAt(0) - (int)specCharacter);
+                        characters[a][f] = (char)((int)text.charAt(b) - secretNumber - f - (int)key.charAt(0) - (int)specCharacter);
                         b++;
                     }
                 }

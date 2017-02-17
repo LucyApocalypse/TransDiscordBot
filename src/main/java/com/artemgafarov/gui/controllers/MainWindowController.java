@@ -57,10 +57,10 @@ public class MainWindowController {
 
         key.setText(key.getText().toLowerCase());
 
-        Encryption.setEncryptedText(text.getText());
-        Encryption.setSpecCharacter(specSymbol.getText().charAt(0));
-        Encryption.setKey(key.getText());
-        Encryption._init();
+        Decryption.setText(text.getText());
+        Decryption.setSpecCharacter(specSymbol.getText().charAt(0));
+        Decryption.setKey(key.getText());
+        Decryption._init();
         try {
             text.setText(Decryption.decrypt());
         } catch (InitException e) {
@@ -94,15 +94,16 @@ public class MainWindowController {
 
 
 
-        Decryption.setText(text.getText());
-        Decryption.setSpecCharacter(specSymbol.getText().charAt(0));
+        Encryption.setText(text.getText());
+        Encryption.setSpecCharacter(specSymbol.getText().charAt(0));
 
-        Decryption.setKey(key.getText());
-        Decryption._init();
+        Encryption.setKey(key.getText());
+        Encryption._init();
         try {
             text.setText(Encryption.encrypt());
         } catch (InitException e) {
             JOptionPane.showMessageDialog(null, "Some Error checked.\nTry to repeat operation", "Error", 2);
+            System.out.println(e.getStackTrace());
         }
     }
 
@@ -117,12 +118,12 @@ public class MainWindowController {
     }
 
     public void encryptionSelected(ActionEvent actionEvent) {
-        decryptRB.setSelected(true);
-        encryptRB.setSelected(false);
+        encryptRB.setSelected(true);
+        decryptRB.setSelected(false);
     }
 
     public void decryptionSelected(ActionEvent actionEvent) {
-        encryptRB.setSelected(true);
-        decryptRB.setSelected(false);
+        decryptRB.setSelected(true);
+        encryptRB.setSelected(false);
     }
 }
